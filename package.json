@@ -1,0 +1,18 @@
+{
+  "name": "pmps-pages",
+  "version": "1.0.0",
+  "description": "UAS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon api"
+  },
+  "author": "Putri Mulyani Pasaribu",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0"
+  },
+  "type": "module"
+}

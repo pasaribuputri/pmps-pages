@@ -1,0 +1,99 @@
+*{
+    color: var(--four-color);
+}
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container-form{
+    height: 100vh;
+    width: 45%;
+    background: var(--first-color);
+}
+
+.header{
+    width: 100%;
+    height: 12vh;
+    padding: 25px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100%;
+}
+
+.content>form {
+    width: 55%;
+    height: 85%;
+    border-radius: 20px;
+    background: (--second-color);
+    box-shadow: -10px -10px 10px 10px rgba(200, 196, 196, 0.05), 10px 10px 10px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+form input[type="password"] {
+    border: none;
+    border-bottom: 1px solid;
+    background: transparent;
+    height: 30px;
+    outline: none;
+    margin-bottom: 20px;
+    border-color: var(--four-color);
+    font-family: Quicksand-SemiBold;
+    font-size: 14px;
+}
+
+.labelTitle {
+    font-family: Quicksand-Bold;
+    font-size: 38px;
+    margin-bottom: 30px;
+    color: var(--four-color);
+}
+
+::placeholder {
+    font-family: Quicksand-SemiBold;
+    font-size: 14px;
+    color: var(--four-color);
+}
+
+.content>form input[type="submit"] {
+    height: 12%;
+    width: 95%;
+    margin: 0 auto 0 auto;
+    border: none;
+    border-radius: 50px 50px 50px 50px;
+    font-size: 16px;
+    font-family: Quicksand-SemiBold;
+    background-color: var(--four-color);
+    color: var(--second-color);
+    box-shadow: 0px 15px 21px -10px var(--second-color);
+    -webkit-box-shadow: 0px 15px 21px -10px var(--second-color);
+    -moz-box-shadow: 0px 15px 21px -10px var(--second-color);
+}
+
+.content>form input[type="submit"]:hover {
+    cursor: pointer;
+    color: var(--four-color);
+    background: var(--third-color);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
