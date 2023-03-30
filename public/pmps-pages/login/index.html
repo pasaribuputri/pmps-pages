@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,18 @@
     <link rel="stylesheet" href="../../assets/css/login.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
 </head>
+
 <body>
     <div class="wrapper">
         <div class="container-form">
             <div class="header">
                 <div class="logo-pmps">
-                    <img src="" alt="">
-                    <label for="">pmp's pages</label>
+                    <img src="../../assets/images/open-book.png" alt="open-book">
+                    <label for="">PMP's Pages</label>
                 </div>
             </div>
             <div class="content">
-                <form action="" id="log-in">
+                <form action="" id="log-in" name="login">
                     <label for="" class="labelTitle">Log in</label>
                     <label for="password" class="labelInput">Access Code</label>
                     <input type="password" id="password" placeholder="Enter your acces code" required>
@@ -30,7 +32,20 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="container-content"></div>
+        <div class="modal-wrapper">
+            <div class="modal-header">
+                <h3>Ini Modal</h3>
+            </div>
+            <div class="modal-body">
+                <p>Merupakan modal untuk notifikasi</p>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()">Oke</button>
+            </div>
+        </div>
+        <div class="mask-modal" onclick="closeModal()"></div>
 </body>
+
+<script src="../../assets/js/modal.js"></script>
+
 </html>

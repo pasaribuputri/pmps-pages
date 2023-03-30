@@ -17,4 +17,22 @@ router.post("/addPenerbit",async(req,res)=>{
     }
 })
 
+router.delete("/deletePenerbit/:id_penerbit",async(req,res)=>{
+        try{
+            await client.query(`delete from penerbit where id_penerbit = ${req.params.id_penerbit}`)
+            res.status(200).json({status: 'Ok',message: "Penerbit berhasil di hapus"})
+        }catch (err){
+            res.status(400).json(err.message)
+        }
+})
+
+router.put("/updatePenerbit/:id_penerbit",async(req,res)=>{
+    try{
+        await client.query(`update penerbit set nama_penerbit = '${req.body.nama_penerbit}'  where id_penerbit = ${req.params.id_penerbit}`)
+        res.status(200).json({status: "Ok",message: "Data penjualan berhasil di update"})
+    }catch(err){
+        res.status(400).json(err.message)
+    }
+})
+
 export default router;

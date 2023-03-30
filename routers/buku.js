@@ -21,4 +21,29 @@ router.post("/addBuku",upload.single("photo"), async(req,res)=>{
     }
 })
 
+router.delete("/deleteBuku/:id_buku",async(req,res)=>{
+    const data = await client.query(`delete from buku where id_buku = ${req.params.id_buku}`)
+    if(data.length){
+         try{
+            res.status(200).json({status: 'OK',message: "Buku berhasil dihapus"})
+        }catch(err){
+            res.status(400).send(err.message)
+        } 
+    }else{
+        return res.status(400).json({status: 'Bad request',error: 'Data tidak ditemukan'})
+    }
+})
+
+router.put("/updateBuku/:id_buku",upload.single("photo"),async(req,res)=>{
+    try{
+        await client.query(`update buku set harga = '${req.body.harga}',id_penerbit = '${req.body.id_penerbit}',
+        judul_buku = '${req.body.judul_buku}',penulis = '${req.body.penulis}',
+        gambar = '${req.file.filename}',id_genre = '${req.body.id_genre}',
+        stok='${req.body.stok}'`)
+        res.status(200).json({status: "OK",message: "Data buku berhasil di update"})
+    }catch{
+        res.status(400).json(err.message)
+    }
+})
+
 export default router;

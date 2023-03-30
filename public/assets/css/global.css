@@ -1,6 +1,93 @@
-:root{
-    --first-color:#F0E5CF;
-    --second-color:#F7F6F2;
-    --third-color:#C8C6C6;
-    --four-color:#4B6587;
+:root {
+    --first-color: #F0E5CF;
+    --second-color: #F7F6F2;
+    --third-color: #C8C6C6;
+    --four-color: #4B6587;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.modal-wrapper {
+    position: absolute;
+    top: 25vh;
+    left: 30vw;
+    width: 35%;
+    height: 40%;
+    background: var(--first-color);
+    border-radius: 10px;
+    z-index: 1000;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.modal-header {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: var(--four-color);
+}
+
+.modal-header>h3 {
+    color: var(--first-color);
+    padding: 0;
+    margin: 0;
+}
+
+.modal-body {
+    height: 60%;
+    width: 100%;
+    padding: 15px;
+}
+
+.modal-body>p {
+    padding: 0;
+    margin: 0;
+}
+
+.modal-footer {
+    height: 20%;
+    width: 100%;
+    border-top: 1px solid var(--four-color);
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.modal-footer>button {
+    background: var(--four-color);
+    border: none;
+    width: 20%;
+    height: 55%;
+    color: var(--first-color);
+    border-radius: 5px;
+}
+
+.modal-footer>button:hover {
+    cursor: pointer;
+}
+
+.mask-modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0, 0.6);
+    position: absolute;
+    visibility: hidden;
+}
+
+.mask-modal.active {
+    visibility: visible;
+}
+
+.modal-wrapper.active {
+    visibility: visible;
 }
