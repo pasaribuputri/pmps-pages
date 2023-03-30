@@ -3,13 +3,18 @@ import { client } from "../database.js";
 
 const router = express.Router();
 
-router.get("/getPenjualan",async(req,res)=>{
+router.get("/getAllPenjualan",async(req,res)=>{
     try{
         const result = await client.query("select * from penjualan")
         res.status(200).json({status: "ok",message: "Data berhasil ditampilkan",data: result.rows})
     }catch(err){
         res.status(400).send(err.message)
     }
+})
+
+router.get("/getPenjualan",async(req,res)=>{
+    const result = await client.query("select penjualan.tanggal,buku.judul_buku,buku.harga,penjualan.jumlah from penjualan join buku on penjualan.id_buku = buku.id_buku")
+    res.send(result.rows)
 })
 
 router.post("/addPenjualan", async(req,res)=>{
@@ -44,4 +49,4 @@ router.put("/updatePenjualan/:id_penjualan",async(req,res)=>{
     }
 })
 
-export default router;
+export default router;  

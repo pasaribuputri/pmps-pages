@@ -3,8 +3,21 @@ import { client } from "../database.js";
 
 const router = express.Router();
 
-router.get("/getGenre",async(req,res)=>{
+// tampil semua genre
+router.get("/getAllGenre",async(req,res)=>{
     const result = await client.query("select * from genre")
+    res.send(result.rows)
+})
+
+// tampil nama genre, nama kategori
+router.get("/getGenre",async(req,res)=>{
+    const result = await client.query("select genre.nama_genre,kategori.nama_kategori from genre join kategori on genre.id_kategori=genre.id_kategori")
+    res.send(result.rows)
+})
+
+// serach genre
+router.get("/getOne/:nama_genre",async(req,res)=>{
+    const result = await client.query(`select * from genre where nama_genre like '%${req.params.nama_genre}'`)
     res.send(result.rows)
 })
 

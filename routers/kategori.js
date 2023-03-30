@@ -3,8 +3,14 @@ import { client } from "../database.js"
 
 const router = express.Router()
 
-router.get("/getKategori",async(req,res)=>{
+router.get("/getAllKategori",async(req,res)=>{
     const result = await client.query("select * from kategori")
+    res.send(result.rows)
+})
+
+// serach kategori
+router.get("/getOne/:nama_kategori",async(req,res)=>{
+    const result = await client.query(`select * from kategori where nama_kategori like '%${req.params.nama_kategori}%'`)
     res.send(result.rows)
 })
 

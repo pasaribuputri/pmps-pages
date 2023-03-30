@@ -2,12 +2,39 @@
     --first-color: #F0E5CF;
     --second-color: #F7F6F2;
     --third-color: #C8C6C6;
-    --four-color: #4B6587;
+    --fourth-color: #4B6587;
+    --fifth-color:#94a4b8;
+}
+
+@font-face {
+    font-family: Quicksand-Regular;
+    src: url(../fonts/Quicksand-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-Light;
+    src: url(../fonts/Quicksand-Light.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url(../fonts/Quicksand-Bold.ttf);
+}
+
+@font-face {
+    font-family: Quicksand-SemiBold;
+    src: url(../fonts/Quicksand-SemiBold.ttf);
 }
 
 * {
+    margin: 0;
+    padding: 0;
+    font-family: Quicksand-Regular;
+    font-size: 12px;
+    color: var(--fourth-color);
     box-sizing: border-box;
 }
+
 
 body {
     padding: 0;
