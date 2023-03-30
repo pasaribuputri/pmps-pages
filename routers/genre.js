@@ -8,4 +8,9 @@ router.get("/getGenre",async(req,res)=>{
     res.send(result.rows)
 })
 
+router.post("/addGenre",async(req,res)=>{
+    await client.query(`insert into genre (id_kategori,nama_genre) values ('${req.body.id_kategori}','${req.body.nama_genre}')`)
+    res.status(201).json({status: "created",message: "Data genre berhasil ditambahkan"})
+})
+
 export default router;
