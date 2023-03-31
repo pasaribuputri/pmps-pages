@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/global.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
     <title>Dashboard | PMP's Pages</title>
 </head>
+
 <body>
     <div class="wrapper">
         <sidebar class="sidebar">
@@ -16,8 +18,8 @@
             </button>
             <div class="header-sidebar">
                 <div class="logo">
-                    <img src="../../assets/images/open-book.png" alt="logo-pmps">
-                    <label for="">PMP's Pages</label>
+                    <img src="../../assets/images/open-book.png" alt="logo-pmps" />
+                    <label>PMP's Pages</label>
                 </div>
             </div>
             <div class="body-sidebar">
@@ -27,7 +29,7 @@
                             <span>
                                 <i class="fa-solid fa-house fa-lg"></i>
                             </span>
-                            <label for="">Dashboard</label>
+                            <label> Dashboard </label>
                         </li>
                         <li class="nav-item">
                             <div class="chevron-down">
@@ -36,48 +38,43 @@
                             <span>
                                 <i class="fa-solid fa-layer-group fa-lg"></i>
                             </span>
-                            <label for="">Data Buku</label>
+                            <label> Data Buku </label>
                         </li>
-                        <div class="child buku">
+                        <div class="child data-buku">
                             <ul class="nav-user">
-                                <li class="nav-item-user kategori-buku">
+                                <li class="nav-item-user kategori">
                                     <span>
                                         <i class="fa-solid fa-caret-right fa-lg"></i>
                                     </span>
-                                    <label style="white-space: nowrap">Kategori Buku</label>
+                                    <label style="white-space: nowrap">Kategori</label>
                                 </li>
-                                <li class="nav-item-user genre-buku">
+                                <li class="nav-item-user genre">
                                     <span>
                                         <i class="fa-solid fa-caret-right fa-lg"></i>
                                     </span>
-                                    <label style="white-space: nowrap">Genre Buku</label>
+                                    <label style="white-space: nowrap">Genre</label>
                                 </li>
-                                <li class="nav-item-user penerbit-buku">
+                                <li class="nav-item-user penerbit">
                                     <span>
                                         <i class="fa-solid fa-caret-right fa-lg"></i>
                                     </span>
-                                    <label style="white-space: nowrap">Penerbit Buku</label>
+                                    <label style="white-space: nowrap">Penerbit</label>
                                 </li>
                             </ul>
                         </div>
-                        <li class="nav-item">
-                            <div class="chevron-down">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
+                        <li class="nav-item-user penjualan">
                             <span>
-                                <i class="fa-solid fa-pills fa-lg"></i>
+                                <i class="fa-solid fa-house fa-lg"></i>
                             </span>
-                            <label for="">Data Penjualan</label>
+                            <label> Data Penjualan </label>
                         </li>
-                        <li class="nav-item">
-                            <div class="chevron-down">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
+                        <li class="nav-item-user data-admin">
                             <span>
-                                <i class="fa-solid fa-pills fa-lg"></i>
+                                <i class="fa-solid fa-house fa-lg"></i>
                             </span>
-                            <label for="">Data Admin</label>
+                            <label> Data Admin </label>
                         </li>
+                    </ul>
                 </nav>
             </div>
             <div class="footer-sidebar">
@@ -107,9 +104,35 @@
                 </div>
             </div>
         </sidebar>
+        <main class="main">
+            <div class="header">
+                <div class="box-judul">
+                    <label class="title">Dashboard</label>
+                    <label>Dashboard</label>
+                </div>
+                <div class="wrapper-profil">
+                    <div class="container-currentdate">
+                        <i class="fa-regular fa-calendar-days fa-lg"></i>
+                        <label class="current-date"></label>
+                    </div>
+                    <label>Putri Mulyani</label>
+                </div>
+            </div>
+            <div class="container-content">
+                <!-- ISI CONTENT  -->
+                <div class="container-card">
+                    <!-- ISI CONTENT DISINI -->
+                </div>
+                <div class="container-chart">
+                    <canvas id="my-chart"></canvas>
+                </div>
+                <!-- END CONTENT  -->
+            </div>
+        </main>
     </div>
-    <div class="container-content">
-        <!--- ISI CONTENT -->
-    </div>
+    <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../assets/js/all-page.js"></script>
 </body>
+
 </html>

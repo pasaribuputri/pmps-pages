@@ -143,7 +143,7 @@
     transition: .5s height;
 }
 
-.child.mahasiswa.active {
+.child.data-buku.active {
     height: calc(40px*3);
     transition: .5s height;
 }
@@ -325,6 +325,12 @@
 .current-date {
     font-family: Quicksand-Bold;
     margin-left: 8px;
+}
+
+.wrapper-profil {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .container-content {
