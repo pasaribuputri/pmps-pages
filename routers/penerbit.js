@@ -5,7 +5,8 @@ const router = express.Router();
 
 router.get("/getPenerbit",async(req,res)=>{
     const result = await client.query("select * from penerbit")
-    res.send(result.rows)
+    res.status(200).json({status: "ok", message: "Data Penerbit berhasil ditampilkan", data : result.rows})
+    // res.send(result.rows)
 })
 
 router.post("/addPenerbit",async(req,res)=>{

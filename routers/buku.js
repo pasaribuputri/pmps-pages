@@ -19,10 +19,10 @@ router.get("/getBuku",async(req,res)=>{
 })
 
 // search buku by nama buku
-router.get("/getOne/:nama_buku",async(req,res)=>{
-    const result = await client.query(`select * from buku where nama_buku like '%${req.params.nama_buku}'`)
-    res.send(result.rows)
-})
+// router.get("/getOne/:nama_buku",async(req,res)=>{
+//     const result = await client.query(`select * from buku where nama_buku like '%${req.params.nama_buku}%'`)
+//     res.send(result.rows)
+// })
 
 
 router.post("/addBuku",upload.single("photo"), async(req,res)=>{

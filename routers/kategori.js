@@ -5,7 +5,8 @@ const router = express.Router()
 
 router.get("/getAllKategori",async(req,res)=>{
     const result = await client.query("select * from kategori")
-    res.send(result.rows)
+    res.status(200).json({status: "ok",message: "Data kategori berhasil ditampilkan",data:result.rows})
+    // res.send(result.rows)
 })
 
 // serach kategori

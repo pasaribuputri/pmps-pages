@@ -111,3 +111,15 @@ form input[type="password"] {
 .logo-pmps>label {
     font-size: 20px;
 }
+
+.image-book {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image-book>img {
+    margin-left: 10%;
+    width: 50%;
+}

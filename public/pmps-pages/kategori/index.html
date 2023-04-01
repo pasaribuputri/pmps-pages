@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/genre.css">
     <title>Dashboard | PMP's Pages</title>
 </head>
 
@@ -120,19 +121,32 @@
             </div>
             <div class="container-content">
                 <!-- ISI CONTENT  -->
-                <div class="container-card">
-                    <!-- ISI CONTENT DISINI -->
+                <div class="box-input-pencarian">
+                    <button class="btn-tambah">Tambah Kategori</button>
+                    <form action="">
+                        <input type="text" class="input-pencarian" placeholder="Pencarian...">
+                        <button class="btn-cari">
+                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        </button>
+                    </form>
                 </div>
-                <div class="container-chart">
-                    <canvas id="my-chart"></canvas>
-                </div>
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Kategori</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
                 <!-- END CONTENT  -->
             </div>
         </main>
     </div>
     <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../assets/js/all-page.js"></script>
+    <script src="../../assets/js/kategori.js"></script>
 </body>
 
 </html>

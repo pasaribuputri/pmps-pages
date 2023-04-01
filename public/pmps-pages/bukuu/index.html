@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/css/genre.css">
-    <link rel="stylesheet" href="../../assets/css/modall.css">
-    <title>Data Buku | PMP's Pages</title>
+    <link rel="stylesheet" href="../../assets/css/detail-book.css">
+    <title>Dashboard | PMP's Pages</title>
 </head>
+
 <body>
     <div class="wrapper">
         <sidebar class="sidebar">
@@ -109,7 +109,7 @@
             <div class="header">
                 <div class="box-judul">
                     <label class="title">Data Buku</label>
-                    <label>Genre Buku</label>
+                    <label>Buku</label>
                 </div>
                 <div class="wrapper-profil">
                     <div class="container-currentdate">
@@ -121,62 +121,81 @@
             </div>
             <div class="container-content">
                 <!-- ISI CONTENT  -->
-                <div class="box-input-pencarian">
-                    <div class="input-header">
-                        <button class="btn-tambah" onclick="openModalTambah()">Tambah Genre</button>
-                    </div>
-                    <form action="">
-                        <input type="text" class="input-pencarian" placeholder="Pencarian...">
-                        <button class="btn-cari">
-                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                        </button>
-                    </form>
-                </div>
-                <table class="content-table">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Genre</th>
-                            <th>Kategori</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                <!-- <div class="container-card"> -->
+                    <!-- ISI CONTENT DISINI -->
+                <!-- </div> -->
                 <!-- END CONTENT  -->
+                <div class="container-detail-book">
+                    <div class="detail-image-book">
+                        <img src="1.jpg" alt="">
+                    </div>
+                    <div class="detail-book">
+                        <div class="detail-judul-book">
+                            <h1>Judul Buku</h1>
+                            <p>Ini Penulis</p>
+                            <h3>Rp 49.000</h3>
+                        </div>
+                        <div class="detail-deskripsi-book">
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Deskripsi</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Merupakan sebuah buku cerita dan dongeng rakyat yang ceritanya sangat terkenal dikalangan rakyat
+                                        Indonesia.</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Tahun</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p>2012</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Penerbit</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Gramedia</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Genre</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Dongeng</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Kategori</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p>Fiksi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button>Penjualan</button>
+                    <button>Edit</button>
+                    <button>Hapus</button>
+                </div>
             </div>
         </main>
     </div>
-    <div class="modal-wrapper">
-        <div class="modal-header">
-            <button class="btn-close-modal" onclick="closeModal()">x</button>
-            <h3>Tambah Buku</h3>
-        </div>
-        <div class="modal-body">
-            <div class="modal-form">
-                <form>
-                    <div class="input-form-tambah">
-                        <label for="id-kategori">Nama Kategori</label>
-                        <select class="input" id="id-kategori" required></select>
-                    </div>
-                    <div class="input-form-tambah">
-                        <label>Nama Genre</label>
-                        <input type="text" id="nama-genre" required>
-                    </div>
-                    <div class="input-button">
-                        <button type="reset">Reset</button>
-                        <button class="btn simpan">Simpan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
     <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../assets/js/all-page.js"></script>
-    <script src="../../assets/js/genre.js"></script>
     <script src="../../assets/js/card-book.js"></script>
-    <script src="../../assets/js/modal.js"></script>
-    <script src="../../assets/js/tambah-genre.js"></script>
 </body>
-
 </html>
