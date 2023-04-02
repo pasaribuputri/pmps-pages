@@ -13,7 +13,7 @@ router.get("/getAllBuku",async(req,res)=>{
 
 // Tampil gambar,judul buku
 router.get("/getBuku",async(req,res)=>{
-    const result = await client.query(`SELECT buku.gambar, buku.judul_buku, buku.penulis, genre.nama_genre, penerbit.nama_penerbit, buku.stok, buku.harga 
+    const result = await client.query(`SELECT buku.gambar, buku.judul_buku, buku.penulis, genre.nama_genre, penerbit.nama_penerbit, buku.stok, buku.harga, buku.deskripsi 
                     FROM buku JOIN genre ON buku.id_genre = genre.id_genre JOIN penerbit ON buku.id_penerbit = penerbit.id_penerbit`)
     res.send(result.rows)
 })

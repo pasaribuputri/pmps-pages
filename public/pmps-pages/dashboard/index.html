@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/card-book.css">
+    <link rel="stylesheet" href="../../assets/css/genre.css">
+    <link rel="stylesheet" href="../../assets/css/modall.css">
     <title>Dashboard | PMP's Pages</title>
 </head>
 <body>
@@ -118,20 +121,85 @@
                 </div>
             </div>
             <div class="container-content">
-                <!-- ISI CONTENT  -->
-                <div class="container-card">
-                    <!-- ISI CONTENT DISINI -->
-                </div>
-                <div class="container-chart">
-                    <canvas id="my-chart"></canvas>
+                <div class="box-input-pencarian">
+                    <div class="input-header">
+                        <button class="btn-tambah" onclick="openModalTambah()">Tambah</button>
+                    </div>
+                    <form action="">
+                        <input type="text" class="input-pencarian" placeholder="Pencarian...">
+                        <button class="btn-cari">
+                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                        </button>
+                    </form>
+                    <div>
+                        <label for="">Penerbit</label>
+                        <select name="" id="id-penerbit"></select>
+                    </div>
+                    <div>
+                        <label for="">Genre</label>
+                        <select name="" id="id-genre"></select>
+                    </div>
+                    <div>
+                        <label for="">Kategori</label>
+                        <select name="" id="id-kategori"></select>
+                    </div>
                 </div>
                 <!-- END CONTENT  -->
             </div>
         </main>
     </div>
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <button class="btn-close-modal" onclick="closeModal()">x</button>
+            <h3>Tambah Buku</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-form">
+                <form>
+                    <div class="input-form-tambah">
+                        <label for="id-kategori">Gambar</label>
+                        <input type="file" name="" id="gambar">
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Judul Buku</label>
+                        <input type="text" id="judul-buku" required>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Penulis</label>
+                        <input type="text" id="penulis" required>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Genre</label>
+                        <select name="" id="id-genre"></select>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Penerbit</label>
+                        <select name="" id="id-penerbit"></select>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Stok</label>
+                        <input type="text" id="stok" required>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Harga</label>
+                        <input type="text" id="penulis" required>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Deskripsi</label>
+                        <textarea ></textarea>
+                    </div>
+                    <div class="input-button">
+                        <button type="reset">Reset</button>
+                        <button class="btn simpan">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../../assets/js/all-page.js"></script>
+    <script src="../../assets/js/card-book.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/buku.js"></script>
 </body>
 
 </html>
