@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../assets/css/genre.css">
+    <link rel="stylesheet" href="../../assets/css/modall.css">
     <title>Dashboard | PMP's Pages</title>
 </head>
 
@@ -63,13 +64,13 @@
                                 </li>
                             </ul>
                         </div>
-                        <li class="nav-item-user penjualan">
+                        <li class="nav-item penjualan">
                             <span>
                                 <i class="fa-solid fa-house fa-lg"></i>
                             </span>
                             <label> Data Penjualan </label>
                         </li>
-                        <li class="nav-item-user data-admin">
+                        <li class="nav-item data-admin">
                             <span>
                                 <i class="fa-solid fa-house fa-lg"></i>
                             </span>
@@ -122,7 +123,7 @@
             <div class="container-content">
                 <!-- ISI CONTENT  -->
                 <div class="box-input-pencarian">
-                    <button class="btn-tambah">Tambah Kategori</button>
+                    <button class="btn-tambah" onclick="openModalTambah()">Tambah Kategori</button>
                     <form action="">
                         <input type="text" class="input-pencarian" placeholder="Pencarian...">
                         <button class="btn-cari">
@@ -144,9 +145,32 @@
             </div>
         </main>
     </div>
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <button class="btn-close-modal" onclick="closeModal()">x</button>
+            <h3>Tambah Kategori</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-form">
+                <form>
+                    <div class="input-form-tambah">
+                        <label>Nama Kategori</label>
+                        <input type="text" id="nama-kategori" required>
+                    </div>
+                    <div class="input-button">
+                        <button type="reset">Reset</button>
+                        <button class="btn simpan">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
     <script src="../../assets/js/all-page.js"></script>
     <script src="../../assets/js/kategori.js"></script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/card-book.js"></script>
+    <script src="../../assets/js/tambah-kategori.js"></script>
 </body>
 
 </html>

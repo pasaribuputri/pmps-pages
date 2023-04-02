@@ -6,7 +6,8 @@ const router = express.Router();
 
 router.get("/getAdmin",async(req,res)=>{
     const result = await client.query("select nama,email from admin")
-    res.send(result.rows)
+    res.status(200).json({status: 'ok', message: "Data admin berhasil ditampilkan",data: result.rows})
+    // res.send(result.rows)
 })
 
 router.post("/addAdmin",async(req,res)=>{

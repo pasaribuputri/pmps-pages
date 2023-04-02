@@ -13,8 +13,9 @@ router.get("/getAllPenjualan",async(req,res)=>{
 })
 
 router.get("/getPenjualan",async(req,res)=>{
-    const result = await client.query("select penjualan.tanggal,buku.judul_buku,buku.harga,penjualan.jumlah from penjualan join buku on penjualan.id_buku = buku.id_buku")
-    res.send(result.rows)
+    const result = await client.query("select penjualan.id_penjualan, penjualan.tanggal,buku.judul_buku,buku.harga,penjualan.jumlah from penjualan join buku on penjualan.id_buku = buku.id_buku")
+    // res.send(result.rows)
+    res.status(200).json({status: "ok",message: "Data Penjualan berhasil ditampilkan",data: result.rows})
 })
 
 router.post("/addPenjualan", async(req,res)=>{

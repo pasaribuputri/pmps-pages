@@ -27,9 +27,9 @@ function createTable(data){
 
             const btnDelete = document.createElement("button")
             btnDelete.className = 'btn-hapus'
-            // btnDelete.addEventListener('click',()=>{
-            //     deleteGenre(data[i].id_genre)
-            // })
+            btnDelete.addEventListener('click',()=>{
+                deleteKategori(data[i].id_kategori)
+            })
 
             const iconHapus = document.createElement('i')
             iconHapus.className= "fa-solid fa-trash fa-xl"
@@ -60,4 +60,19 @@ async function showAllKategori(){
             }
         }
     })
+}
+
+async function deleteKategori(id_kategori){
+    if(confirm(`Apakah anda yakin ingin menghapus data dengan id kategori ${id_kategori}`)){
+        await fetch(`/api/kategori/deleteKategori/${id_kategori}`)
+        .then((response)=>response.json())
+        .then((res)=>{
+            if(res.status.ok){
+                alert(res.message)
+                showAllKategori()
+            }else{
+                alert('eror')
+            }
+        })
+    }
 }

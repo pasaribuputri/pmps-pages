@@ -92,10 +92,10 @@ document.querySelector('.nav-item-user.penerbit').onclick = ((e) => {
 location.href='/pmps-pages/penerbit/'
 })
 
-document.querySelector('.nav-item-user.penjualan').onclick = ((e) => {
+document.querySelector('.nav-item.penjualan').onclick = ((e) => {
 location.href='/pmps-pages/penjualan/'
 })
 
-document.querySelector('.nav-item-user.data-admin').onclick = ((e) => {
+document.querySelector('.nav-item.data-admin').onclick = ((e) => {
 location.href='/pmps-pages/admin/'
 })
