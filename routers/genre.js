@@ -14,7 +14,7 @@ router.get("/getAllGenre",async(req,res)=>{
 
 // tampil nama genre, nama kategori
 router.get("/getGenre",async(req,res)=>{
-    const result = await client.query("select nama_genre, nama_kategori from genre inner join kategori on genre.id_kategori = kategori.id_kategori")
+    const result = await client.query("select id_genre,nama_genre, nama_kategori from genre inner join kategori on genre.id_kategori = kategori.id_kategori order by id_genre asc")
     res.status(200).json({status: "ok",message: "Data genre berhasil ditampilkan",data:result.rows})
     // res.send(result.rows)
 })
@@ -31,26 +31,12 @@ router.post("/addGenre",async(req,res)=>{
 })
 
 router.delete("/deleteGenre/:id_genre",async(req,res)=>{
-    const {id_genre} = req.params
-    const querySearch = "select * from genre where id_genre=?"
-    const queryDelete = "delete from genre where id_genre=?"
-    const data = await client.query(querySearch,[id_genre])
-    if(data.length){
-        try{
-            await client.query(queryDelete,[id_genre])
-            res.status(200).json({status: 'OK',message: 'Data berhasil dihapus'})
-        }catch(err){
-            res.status(400).send(err.message)
-        }
-    }else{
-        return res.status(400).json({status: 'Bad Request',error: 'Data tidak ditemukan'})
+    try{
+        await client.query(`delete from genre where id_genre = ${req.params.id_genre}`)
+        res.status(200).json({status: 'Ok',message: "Genre berhasil di hapus"})
+    }catch (err){
+        res.status(400).json(err.message)
     }
-    // try{
-    //     await client.query(`delete from genre where id_genre = ${req.params.id_genre}`)
-    //     res.status(200).json({status: 'Ok',message: "Genre berhasil di hapus"})
-    // }catch (err){
-    //     res.status(400).json(err.message)
-    // }
 })
 
 router.put("/updateGenre/:id_genre",async(req,res)=>{

@@ -1,6 +1,6 @@
 showAllKategori()
 
-function createTable(data){
+async function createTable(data){
     document.querySelector("tbody").textContent=''
     if(typeof data!=="string"){
         for(let i=0;i<data.length;i++){
@@ -17,9 +17,9 @@ function createTable(data){
             const tdDetail = document.createElement("td")
             const anchorDetail = document.createElement("button")
             anchorDetail.className = 'btn-edit'
-            // anchorDetail.addEventListener('click',()={
-            //     location.href=``
-            // })
+            anchorDetail.addEventListener('click',()=>{
+                editKategori(data[i].id_kategori)
+            })
 
             const iconEdit = document.createElement('i')
             iconEdit.className="fa-solid fa-pen-to-square fa-xl"
@@ -28,7 +28,7 @@ function createTable(data){
             const btnDelete = document.createElement("button")
             btnDelete.className = 'btn-hapus'
             btnDelete.addEventListener('click',()=>{
-                deleteKategori(data[i].id_kategori)
+                 deleteKategori(data[i].id_kategori)
             })
 
             const iconHapus = document.createElement('i')
@@ -64,15 +64,45 @@ async function showAllKategori(){
 
 async function deleteKategori(id_kategori){
     if(confirm(`Apakah anda yakin ingin menghapus data dengan id kategori ${id_kategori}`)){
-        await fetch(`/api/kategori/deleteKategori/${id_kategori}`)
+        await fetch(`/api/kategori/deleteKategori/${id_kategori}`,{
+            method: "DELETE",
+        })
         .then((response)=>response.json())
         .then((res)=>{
-            if(res.status.ok){
                 alert(res.message)
                 showAllKategori()
-            }else{
-                alert('eror')
-            }
         })
     }
 }
+
+let id_kategori;
+
+
+function editKategori(id){
+    openModalEditKategori()
+    id_kategori = id;
+}
+
+document.formEditKategori.onsubmit = async (e) => {
+    e.preventDefault();
+    const nama_kategori = document.getElementById("edit-nama-kategori").value
+    await fetch("/api/kategori/updateKategori/"+ id_kategori,{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            nama_kategori
+        })
+    })
+    .then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "Ok"){
+            document.getElementById("edit-nama-kategori").value = ''
+            alert(res.message)
+            closeModalEditKategori()
+            showAllKategori()
+        }
+    })
+}
+

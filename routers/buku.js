@@ -15,7 +15,8 @@ router.get("/getAllBuku",async(req,res)=>{
 router.get("/getBuku",async(req,res)=>{
     const result = await client.query(`SELECT buku.gambar, buku.judul_buku, buku.penulis, genre.nama_genre, penerbit.nama_penerbit, buku.stok, buku.harga, buku.deskripsi 
                     FROM buku JOIN genre ON buku.id_genre = genre.id_genre JOIN penerbit ON buku.id_penerbit = penerbit.id_penerbit`)
-    res.send(result.rows)
+    // res.send(result.rows)
+    res.status(200).json({status: "ok",message: "Data berhasil ditampilkan", data: result.rows})
 })
 
 // search buku by nama buku
@@ -25,14 +26,15 @@ router.get("/getBuku",async(req,res)=>{
 // })
 
 
-router.post("/addBuku",upload.single("photo"), async(req,res)=>{
+router.post("/addBuku",upload.single("gambar"), async(req,res)=>{
     try{
-        await client.query(`insert into buku (harga,id_penerbit,judul_buku,penulis,gambar,id_genre,stok) values ('${req.body.harga}',
-        '${req.body.id_penerbit}','${req.file.filename}','${req.body.penulis}',
-        '${req.body.harga}','${req.body.id_genre}','${req.body.stok}')`);
+        await client.query(`insert into buku (harga,id_penerbit,judul_buku,penulis,gambar,id_genre,stok,deskripsi) values ('${req.body.harga}',
+        '${req.body.id_penerbit}','${req.body.judul_buku}','${req.body.penulis}','${req.file.filename}',
+        '${req.body.id_genre}','${req.body.stok}','${req.body.deskripsi}')`);
         res.status(201).json({status: "created",message: "Data buku berhasil ditambahkan"})
     }catch (err){
-        res.status(400).json(err.message)
+        console.log(err);
+        res.status(400).json({message : err})
     }
 })
 

@@ -14,7 +14,6 @@ router.get("/getAllPenjualan",async(req,res)=>{
 
 router.get("/getPenjualan",async(req,res)=>{
     const result = await client.query("select penjualan.id_penjualan, penjualan.tanggal,buku.judul_buku,buku.harga,penjualan.jumlah from penjualan join buku on penjualan.id_buku = buku.id_buku")
-    // res.send(result.rows)
     res.status(200).json({status: "ok",message: "Data Penjualan berhasil ditampilkan",data: result.rows})
 })
 
@@ -40,14 +39,5 @@ router.delete("/deletePenjualan/:id_penjualan",async(req,res)=>{
     }
 })
 
-router.put("/updatePenjualan/:id_penjualan",async(req,res)=>{
-    try{
-        await client.query(`update penjualan set tanggal = '${req.body.tanggal}',id_buku = '${req.body.id_buku}',
-        jumlah = '${req.body.jumlah}' where id_penjualan = ${req.params.id_penjualan}`)
-        res.status(200).json({status: "Ok",message: "Data penjualan berhasil di update"})
-    }catch(err){
-        res.status(400).json(err.message)
-    }
-})
 
 export default router;  

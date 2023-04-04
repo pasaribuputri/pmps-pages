@@ -17,9 +17,9 @@ function createTable(data){
             const tdDetail = document.createElement("td")
             const anchorDetail = document.createElement("button")
             anchorDetail.className = 'btn-edit'
-            // anchorDetail.addEventListener('click',()={
-
-            // })
+            anchorDetail.addEventListener('click',()=>{
+                editPenerbit(data[i].id_penerbit)
+            })
 
             const iconEdit = document.createElement('i')
             iconEdit.className="fa-solid fa-pen-to-square fa-xl"
@@ -27,9 +27,9 @@ function createTable(data){
 
             const btnDelete = document.createElement("button")
             btnDelete.className = 'btn-hapus'
-            // btnDelete.addEventListener('click',()=>{
-
-            // })
+            btnDelete.addEventListener('click',()=>{
+                deletePenerbit(data[i].id_penerbit)
+            })
 
             const iconHapus = document.createElement('i')
             iconHapus.className= "fa-solid fa-trash fa-xl"
@@ -58,6 +58,49 @@ async function showAllPenerbit(){
             }else{
                 createTable("Data Kosong")
             }
+        }
+    })
+}
+
+async function deletePenerbit(id_penerbit){
+    if(confirm("Apakah anda yakin ingin menghapus data?")){
+        await fetch(`/api/penerbit/deletePenerbit/${id_penerbit}`,{
+            method: "DELETE",
+        })
+        .then((response)=>response.json())
+        .then((res)=>{
+            alert(res.message)
+            showAllPenerbit()
+        })
+    }
+}
+
+let id_penerbit;
+
+function editPenerbit(id){
+    openModalEditPenerbit()
+    id_penerbit = id;
+}
+
+document.formEditPenerbit.onsubmit = async(e)=>{
+    e.preventDefault()
+    const nama_penerbit = document.getElementById("edit-nama-penerbit").value
+    await fetch("/api/penerbit/updatePenerbit/"+id_penerbit,{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            nama_penerbit
+        })
+    })
+    .then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "Ok"){
+            document.getElementById("edit-nama-penerbit").value = ''
+            alert(res.message)
+            closeModalEditPenerbit()
+            showAllPenerbit()
         }
     })
 }

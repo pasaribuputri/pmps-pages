@@ -4,7 +4,7 @@ import { client } from "../database.js"
 const router = express.Router()
 
 router.get("/getAllKategori",async(req,res)=>{
-    const result = await client.query("select * from kategori")
+    const result = await client.query("select * from kategori order by id_kategori asc")
     res.status(200).json({status: "ok",message: "Data kategori berhasil ditampilkan",data:result.rows})
     // res.send(result.rows)
 })

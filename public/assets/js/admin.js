@@ -22,6 +22,9 @@ function createTable(data){
         const tdDetail = document.createElement("td")
         const anchorDetail = document.createElement("button")
         anchorDetail.className = 'btn-edit'
+        anchorDetail.addEventListener("click",()=>{
+            editAdmin(data[i].id_admin)
+        })
 
         const iconEdit = document.createElement("i")
         iconEdit.className = "fa-solid fa-pen-to-square fa-xl"
@@ -29,6 +32,9 @@ function createTable(data){
 
         const btnDelete = document.createElement("button")
         btnDelete.className = 'btn-hapus'
+        btnDelete.addEventListener("click",()=>{
+            deleteAdmin(data[i].id_admin)
+        })
 
         const iconHapus = document.createElement("i")
         iconHapus.className = "fa-solid fa-trash fa-xl"
@@ -59,4 +65,50 @@ async function showAllAdmin(){
             }
         }
     })
+}
+
+let id_admin;
+
+function editAdmin(id){
+    openModalEditAdmin()
+    id_admin = id;
+}
+
+document.formEditAdmin.onsubmit = async (e) =>{
+    e.preventDefault()
+    const nama = document.getElementById("edit-nama").value
+    const email = document.getElementById("edit-email").value
+    await fetch("/api/admin/updateAdmin/"+id_admin,{
+        method: "PUT",
+        headers: {
+            "Content-Type" : "application/json",
+        },
+        body: JSON.stringify({
+            nama,
+            email
+        })
+    }).then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "Ok"){
+            document.getElementById("edit-nama").value = ''
+            document.getElementById("edit-email").value= ''
+            alert(res.message)
+            closeModalEditAdmin()
+            showAllAdmin()
+        }
+    })
+}
+
+async function deleteAdmin(id_admin){
+    if(confirm("Apakah anda yakin ingin menghapus?")){
+        await fetch(`/api/admin/deleteAdmin/${id_admin}`,{
+            method: "DELETE",
+        }).then((response)=>response.json())
+        .then((res)=>{
+            if(res.status == "ok"){
+                alert(res.message)
+                showAllAdmin()
+            }
+        })
+    }
 }

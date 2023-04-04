@@ -4,7 +4,7 @@ import { client } from "../database.js";
 const router = express.Router();
 
 router.get("/getPenerbit",async(req,res)=>{
-    const result = await client.query("select * from penerbit")
+    const result = await client.query("select * from penerbit order by id_penerbit asc")
     res.status(200).json({status: "ok", message: "Data Penerbit berhasil ditampilkan", data : result.rows})
     // res.send(result.rows)
 })
@@ -30,7 +30,7 @@ router.delete("/deletePenerbit/:id_penerbit",async(req,res)=>{
 router.put("/updatePenerbit/:id_penerbit",async(req,res)=>{
     try{
         await client.query(`update penerbit set nama_penerbit = '${req.body.nama_penerbit}'  where id_penerbit = ${req.params.id_penerbit}`)
-        res.status(200).json({status: "Ok",message: "Data penjualan berhasil di update"})
+        res.status(200).json({status: "Ok",message: "Data penerbit berhasil di update"})
     }catch(err){
         res.status(400).json(err.message)
     }

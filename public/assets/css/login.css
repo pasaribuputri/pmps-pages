@@ -56,6 +56,18 @@ form input[type="password"] {
     font-size: 14px;
 }
 
+form input[type="email"] {
+    border: none;
+    border-bottom: 1px solid;
+    background: transparent;
+    height: 30px;
+    outline: none;
+    margin-bottom: 20px;
+    border-color: var(--fourth-color);
+    font-family: Quicksand-SemiBold;
+    font-size: 14px;
+}
+
 .labelTitle {
     font-family: Quicksand-Bold;
     font-size: 38px;

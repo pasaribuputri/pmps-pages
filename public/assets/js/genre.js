@@ -1,4 +1,5 @@
 showAllGenre()
+selectOptionGenre();
 
 function createTable(data){
     document.querySelector("tbody").textContent=''
@@ -21,9 +22,9 @@ function createTable(data){
             const tdDetail = document.createElement("td")
             const anchorDetail = document.createElement("button")
             anchorDetail.className = 'btn-edit'
-            // anchorDetail.addEventListener('click',()={
-            //     location.href=``
-            // })
+            anchorDetail.addEventListener('click',()=>{
+                editGenre(data[i].id_genre)
+            })
 
             const iconEdit = document.createElement('i')
             iconEdit.className="fa-solid fa-pen-to-square fa-xl"
@@ -52,6 +53,8 @@ function createTable(data){
     }
 }
 
+
+
 async function showAllGenre(){
     await fetch("/api/genre/getGenre")
     .then((response)=>response.json())
@@ -73,12 +76,59 @@ async function deleteGenre(id_genre){
         })
         .then((response)=>response.json())
         .then((res)=>{
-            if(res.status === 'Ok'){
                 alert(res.message)
                 showAllGenre()
-            }else{
-                alert('eror')
-            }
         })
     }
+}
+
+let id_genre;
+
+function editGenre(id){
+    openModalEditGenre()
+    id_genre = id;
+}
+
+document.formEditGenre.onsubmit = async (e) =>{
+    e.preventDefault();
+    const id_kategori = document.getElementById("edit-id-kategori").value
+    const nama_genre = document.getElementById("edit-nama-genre").value
+    await fetch("/api/genre/updateGenre/"+id_genre,{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id_kategori,
+            nama_genre
+        })
+    })
+    .then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "Ok"){
+            document.getElementById("edit-id-kategori").value = ''
+            document.getElementById("edit-nama-genre").value = ''
+            alert(res.message)
+            closeModalEditGenre()
+            showAllGenre()
+        }
+    })
+}
+
+function selectOptionGenre(){
+    fetch('/api/kategori/getAllKategori').then((response)=>response.json())
+    .then((res)=>{
+        createOptionsGenre(res.data)
+    })
+}
+
+
+function createOptionsGenre(data){
+    const select = document.getElementById('edit-id-kategori')
+    data.map((val)=>{
+        const opt = document.createElement("option")
+        opt.value = val.id_kategori
+        opt.text = val.nama_kategori
+        select.appendChild(opt)
+    })
 }

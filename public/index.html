@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | PMP's Pages</title>
-    <link rel="stylesheet" href="../../assets/css/login.css">
-    <link rel="stylesheet" href="../../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
 </head>
 
 <body>
@@ -26,8 +25,13 @@
                 </div>
                 <form action="" id="log-in" name="login">
                     <label for="" class="labelTitle">Log in</label>
+
+                    <label for="email" class="labelInput">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
                     <label for="password" class="labelInput">Access Code</label>
-                    <input type="password" id="password" placeholder="Enter your acces code" required>
+                    <input type="password" name="kode_akses" id="password" placeholder="Enter your acces code" required>
+                    
                     <div class="checkbox">
                         <input type="checkbox" id="keepLogged">
                         <label for="keepLogged">Keep me logged in</label>
@@ -36,20 +40,6 @@
                 </form>
             </div>
         </div>
-        <!-- <div class="modal-wrapper">
-            <div class="modal-header">
-                <h3>Ini Modal</h3>
-            </div>
-            <div class="modal-body">
-                <p>Merupakan modal untuk notifikasi</p>
-            </div>
-            <div class="modal-footer">
-                <button onclick="closeModal()">Oke</button>
-            </div>
-        </div>
-        <div class="mask-modal" onclick="closeModal()"></div> -->
+        <script src="./assets/js/login.js"></script>
 </body>
-
-<script src="../../assets/js/modal.js"></script>
-
 </html>

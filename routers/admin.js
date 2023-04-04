@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs"
 const router = express.Router();
 
 router.get("/getAdmin",async(req,res)=>{
-    const result = await client.query("select nama,email from admin")
+    const result = await client.query("select id_admin, nama,email from admin order by id_admin asc")
     res.status(200).json({status: 'ok', message: "Data admin berhasil ditampilkan",data: result.rows})
     // res.send(result.rows)
 })

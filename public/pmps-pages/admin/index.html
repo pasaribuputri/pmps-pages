@@ -28,19 +28,19 @@
                         <ul class="nav">
                             <li class="nav-item dashboard">
                                 <span>
-                                    <i class="fa-solid fa-house fa-lg"></i>
+                                    <i class="fas fa-book fa-lg"></i>
                                 </span>
-                                <label> Dashboard </label>
-                            </li>
-                            <li class="nav-item">
-                                <div class="chevron-down">
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                                <span>
-                                    <i class="fa-solid fa-layer-group fa-lg"></i>
-                                </span>
-                                <label> Data Buku </label>
-                            </li>
+                                <label> Buku </label>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="chevron-down" style="position: absolute; right: -10px;">
+                                        <i class="fa-solid fa-chevron-down"></i>
+                                    </div>
+                                    <span>
+                                        <i class="fas fa-book-open fa-lg"></i>
+                                    </span>
+                                    <label> Data Buku </label>
+                                </li>
                             <div class="child data-buku">
                                 <ul class="nav-user">
                                     <li class="nav-item-user kategori">
@@ -65,13 +65,13 @@
                             </div>
                             <li class="nav-item penjualan">
                                 <span>
-                                    <i class="fa-solid fa-house fa-lg"></i>
+                                    <i class="fas fa-chart-line fa-lg"></i>
                                 </span>
                                 <label> Data Penjualan </label>
                             </li>
                             <li class="nav-item active data-admin">
                                 <span>
-                                    <i class="fa-solid fa-house fa-lg"></i>
+                                    <i class="fas fa-users fa-lg"></i>
                                 </span>
                                 <label> Data Admin </label>
                             </li>
@@ -147,9 +147,9 @@
                 </div>
             </main>
         </div>
-        <div class="modal-wrapper">
+        <div class="modal-wrapper tambah-admin">
             <div class="modal-header">
-                <button class="btn-close-modal" onclick="closeModal()">x</button>
+                <button class="btn-close-modal" onclick="closeModalTambahAdmin()">x</button>
                 <h3>Tambah Admin</h3>
             </div>
             <div class="modal-body">
@@ -174,6 +174,33 @@
                     </form>
                 </div>
             </div>
+        </div>
+
+        <div class="modal-wrapper edit-admin">
+            <div class="modal-header">
+                <button class="btn-close-modal" onclick="closeModalEditAdmin()">x</button>
+                <h3>Edit Admin</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-form">
+                    <form name="formEditAdmin">
+                        <div class="input-form-tambah">
+                            <label for="nama">Nama</label>
+                            <input type="text" id="edit-nama" required>
+                        </div>
+                        <div class="input-form-tambah">
+                            <label>Email</label>
+                            <input type="email" id="edit-email" required>
+                        </div>
+                        <div class="input-button">
+                            <button type="reset">Reset</button>
+                            <button class="btn simpan">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="mask-modal"></div>
         <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
         <script src="../../assets/js/all-page.js"></script>
         <script src="../../assets/js/admin.js"></script>
