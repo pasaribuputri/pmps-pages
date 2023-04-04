@@ -1,5 +1,15 @@
 showAllKategori()
 
+document.querySelector(".btn-cari").onclick = (async(e)=>{
+    e.preventDefault()
+    const cari = document.querySelector(".input-pencarian").value
+    if(cari){
+        showCariKategori(cari)
+    }else{
+        showAllKategori()
+    }
+})
+
 async function createTable(data){
     document.querySelector("tbody").textContent=''
     if(typeof data!=="string"){
@@ -46,6 +56,18 @@ async function createTable(data){
         trNothing.className = 'data-nothing'
         document.querySelector("tbody").appendChild(trNothing)
     }
+}
+
+async function showCariKategori(cari){
+    await fetch(`/api/kategori/getOne/${cari}`)
+    .then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "ok"){
+            createTable(res.data)
+        }else{
+            createTable()
+        }
+    })
 }
 
 async function showAllKategori(){

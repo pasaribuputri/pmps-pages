@@ -33,7 +33,7 @@ let mydate = new Date();
         mydate.getFullYear();
       const date = (document.querySelector(".current-date").textContent = str);
 
-      document.querySelector('.user-name').textContent = localStorage.getItem('user');
+      document.querySelector('.user-name').textContent = localStorage.getItem('userLogin');
 
 
 

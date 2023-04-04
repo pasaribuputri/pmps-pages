@@ -12,7 +12,7 @@ router.get("/getAllKategori",async(req,res)=>{
 // serach kategori
 router.get("/getOne/:nama_kategori",async(req,res)=>{
     const result = await client.query(`select * from kategori where nama_kategori like '%${req.params.nama_kategori}%'`)
-    res.send(result.rows)
+    res.status(200).json({status: "ok",message: "Data ditampilkan",data: result.rows})
 })
 
 router.post("/addKategori",async(req,res)=>{

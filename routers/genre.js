@@ -20,10 +20,11 @@ router.get("/getGenre",async(req,res)=>{
 })
 
 // serach genre
+
 router.get("/getOne/:nama_genre",async(req,res)=>{
-    const result = await client.query(`select * from genre where nama_genre like '%${req.params.nama_genre}'`)
-    res.send(result.rows)
-})
+    const result = await client.query(`select * from genre where nama_genre like '%${req.params.nama_genre}%'`);
+    res.status(200).json({status: "ok",message: "data ditampilkan",data:result.rows})
+});
 
 router.post("/addGenre",async(req,res)=>{
     await client.query(`insert into genre (id_kategori,nama_genre) values ('${req.body.id_kategori}','${req.body.nama_genre}')`)

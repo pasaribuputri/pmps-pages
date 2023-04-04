@@ -96,7 +96,157 @@
     border-radius: 5px;
     font-weight: bold;
 }
+.content-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0px 15px 21px -10px var(--second-color);
+    -webkit-box-shadow: 0px 15px 21px -10px var(--second-color);
+    -moz-box-shadow: 0px 15px 21px -10px var(--second-color);
+}
 
+.content-table thead tr {
+    background-color: var(--second-color);
+    color: var(--fourth-color);
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    color: var(--fourth-color);
+    border-bottom: 1px solid var(--second-color);
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: var(--fifth-color);
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--second-color);
+}
+
+.btn-edit,
+.btn-hapus {
+    background: transparent;
+    border: none;
+}
+
+.btn-edit:hover,
+.btn-hapus:hover {
+    cursor: pointer;
+}
+
+.btn-edit {
+    margin-right: 25px;
+}
+
+.box-input-pencarian {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 0px;
+    box-sizing: border-box;
+}
+
+.input-pencarian {
+    background: var(--fifth-color);
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid var(--second-color);
+    margin: 0px 10px;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-boxs;
+}
+
+.input-pencarian::placeholder {
+    font-weight: bold;
+    color: var(--first-color);
+}
+
+.input-header>.btn-cari {
+    background: transparent;
+    border: none;
+    width: auto;
+}
+
+.input-header>.btn-cari:hover {
+    cursor: pointer;
+    background: transparent;
+}
+
+.data-nothing {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-tambah {
+    background: var(--fifth-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-tambah:hover {
+    background: var(--second-color);
+    cursor: pointer;
+}
+
+.input-header>button {
+    width: 80px;
+    background: var(--second-color);
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.input-header>button:hover {
+    background: var(--third-color);
+    cursor: pointer;
+}
+
+.input-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-header>select {
+    background: var(--second-color);
+    border: none;
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.input-header>input[type='text'] {
+    background: var(--second-color);
+    outline: none;
+    border: none;
+    height: 25px;
+    border-radius: 5px;
+    padding: 0 5px;
+    width: 120px;
+}
+
+
+.container-header {
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px
+}
 .btn-tambah:hover {
     background: var(--second-color);
     cursor: pointer;

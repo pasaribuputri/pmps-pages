@@ -6,7 +6,11 @@ const router = express.Router();
 router.get("/getPenerbit",async(req,res)=>{
     const result = await client.query("select * from penerbit order by id_penerbit asc")
     res.status(200).json({status: "ok", message: "Data Penerbit berhasil ditampilkan", data : result.rows})
-    // res.send(result.rows)
+})
+
+router.get("/getOne/:nama_penerbit",async(req,res)=>{
+    const result = await client.query(`select * from penerbit where nama_penerbit like '%${req.params.nama_penerbit}%'`)
+    res.status(200).json({status: "ok",message: "data ditampilkan", data:result.rows})
 })
 
 router.post("/addPenerbit",async(req,res)=>{

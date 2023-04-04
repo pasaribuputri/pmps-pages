@@ -1,5 +1,15 @@
 showAllPenerbit()
 
+document.querySelector(".btn-cari").onclick = (async(e)=>{
+    e.preventDefault()
+    const cari = document.querySelector(".input-pencarian").value
+    if(cari){
+        showCariPenerbit(cari)
+    }else{
+        showAllPenerbit()
+    }
+})
+
 function createTable(data){
     document.querySelector("tbody").textContent=''
     if(typeof data!=="string"){
@@ -46,6 +56,18 @@ function createTable(data){
         trNothing.className = 'data-nothing'
         document.querySelector("tbody").appendChild(trNothing)
     }
+}
+
+async function showCariPenerbit(cari){
+    await fetch(`/api/penerbit/getOne/${cari}`)
+    .then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "ok"){
+            createTable(res.data)
+        }else{
+            createTable()
+        }
+    })
 }
 
 async function showAllPenerbit(){

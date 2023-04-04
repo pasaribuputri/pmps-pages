@@ -1,6 +1,16 @@
 showAllGenre()
 selectOptionGenre();
 
+document.querySelector(".btn-cari").onclick = (async(e)=>{
+    e.preventDefault();
+    const cari = document.querySelector('.input-pencarian').value
+    if(cari){
+        showCariGenre(cari)
+    }else{
+        showAllGenre()
+    }
+})
+
 function createTable(data){
     document.querySelector("tbody").textContent=''
     if(typeof data!=="string"){
@@ -53,7 +63,17 @@ function createTable(data){
     }
 }
 
-
+async function showCariGenre(cari){
+    await fetch(`/api/genre/getOne/${cari}`)
+    .then((response)=>response.json())
+    .then((res)=>{
+        if(res.status == "ok"){
+            createTable(res.data)
+        }else{
+            createTable()
+        }
+    })
+}
 
 async function showAllGenre(){
     await fetch("/api/genre/getGenre")
