@@ -54,13 +54,12 @@ app.use((req, res, next) => {
     }
 })
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
-// import path from "path";
-// import { fileURLToPath } from "url";
-// const __filename = fileURLToPath(import.meta.url)
-// const __dirname = path, dirname(__filename);
-// app.use(express.static(path.join(__dirname,"public")));
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/api/auth', auth);
 app.use("/api/buku",bukuRouter);

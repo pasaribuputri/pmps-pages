@@ -83,7 +83,7 @@ router.put(
         await client.query(`update buku set harga = '${req.body.harga}',id_penerbit = '${req.body.id_penerbit}',
             judul_buku = '${req.body.judul_buku}',penulis = '${req.body.penulis}',
             gambar = '${req.file.filename}',id_genre = '${req.body.id_genre}',
-            stok='${req.body.stok}', deskripsi='${req.body.deskripsi}'`);
+            stok='${req.body.stok}', deskripsi='${req.body.deskripsi}' where id_buku = '${req.params.id_buku}'`);
         res
           .status(200)
           .json({ status: "OK", message: "Data buku berhasil di update" });
@@ -94,7 +94,7 @@ router.put(
       try {
         await client.query(`update buku set harga = '${req.body.harga}',id_penerbit = '${req.body.id_penerbit}',
             judul_buku = '${req.body.judul_buku}',penulis = '${req.body.penulis}',id_genre = '${req.body.id_genre}',
-            stok='${req.body.stok}', deskripsi='${req.body.deskripsi}'`);
+            stok='${req.body.stok}', deskripsi='${req.body.deskripsi}' where id_buku = '${req.params.id_buku}'`);
         res
           .status(200)
           .json({ status: "OK", message: "Data buku berhasil di update" });
