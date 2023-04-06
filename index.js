@@ -61,6 +61,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "public")));
 
+
+
 app.use('/api/auth', auth);
 app.use("/api/buku",bukuRouter);
 app.use("/api/admin",adminRouter);
@@ -68,5 +70,8 @@ app.use("/api/genre",genreRouter);
 app.use("/api/kategori",kategoriRouter)
 app.use("/api/penerbit",penerbitRouter)
 app.use("/api/penjualan",penjualamRouter)
+
+
+app.get('/favicon.ico', (req, res) => res.status(204));
 
 app.listen(port, () => console.log(`Berjalan pada port ${port}`));
