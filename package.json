@@ -4,7 +4,7 @@
   "description": "UAS",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon api"
+    "dev": "nodemon index.js"
   },
   "author": "Putri Mulyani Pasaribu",
   "license": "MIT",
