@@ -26,5 +26,11 @@ router.post('/login', async(req, res) => {
     }
 })
 
+router.get('/logout', (_req, res) => {
+    res.setHeader('Cache-Control', 'no-store');
+    res.clearCookie('token');
+    res.status(200).json({status: 'ok', message: 'Logout berhasil'})
+})
+
 
 export default router;

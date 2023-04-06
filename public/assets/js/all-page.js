@@ -57,7 +57,14 @@ const toggleSidebar = document.querySelector(".toggleSidebar");
     });
 
 document.querySelector('.nav-item-user.log-out').onclick = ((e)=>{
-location.href='/pmps-pages/login/'
+  fetch('/api/auth/logout')
+  .then((res) => res.json())
+  .then((respon) => {
+    if(respon.status == 'ok'){
+      alert(respon.message);
+      location.href = '/login';
+    }
+  })
 })
 
 document.querySelector('.nav-item.dashboard').addEventListener('click', (e) => {
@@ -83,3 +90,6 @@ location.href='/pmps-pages/penjualan/'
 document.querySelector('.nav-item.data-admin').onclick = ((e) => {
 location.href='/pmps-pages/admin/'
 })
+
+  
+

@@ -26,16 +26,11 @@ router.post("/addPenjualan", async(req,res)=>{
 })
 
 router.delete("/deletePenjualan/:id_penjualan",async(req,res)=>{
-    const data = await client.query("select * from penjualan")
-    if(data.length){
-        try{
-            await client.query(`delete from penjualan where id_penjualan = '${req.params.id_penjualan}'`)
-            res.status(200).json({status: 'Ok',message: "Penjualan berhasil di hapus"})
-        }catch (err){
-            res.status(400).json(err.message)
-        }
-    }else{
-        return res.status(400).json({status:'Bad Request',error: "Data tidak ditemukan"})
+    try{
+        await client.query(`delete from penjualan where id_penjualan = ${req.params.id_penjualan}`)
+        res.status(200).json({status: "ok",message: "Data penjualan berhasil dihapus"})
+    }catch(err){
+        res.status(400).json(err.message)
     }
 })
 

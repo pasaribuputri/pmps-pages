@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../assets/css/modall.css">
     <title>Buku | PMP's Pages</title>
 </head>
+
 <body>
     <div class="wrapper">
         <sidebar class="sidebar">
@@ -122,23 +123,23 @@
                     <div class="input-header">
                         <button class="btn-tambah" onclick="openModalTambah()">Tambah</button>
                     </div>
-                    <form class="input-header">
-                        <input type="text" class="input-pencarian" placeholder="Pencarian...">
-                        <button class="btn-cari">
+                    <div class="input-header">
+                        <input type="text" class="input-pencarian" id="cari-judul-buku" placeholder="Pencarian...">
+                        <button class="btn-cari" onclick="getBuku()">
                             <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                         </button>
-                    </form>
+                    </div>
                     <div class="input-header">
                         <label for="">Penerbit</label>
-                        <select name="" id="id-penerbit"></select>
+                        <select name="" id="cari-id-penerbit" onchange="getBuku()">
+                            <option value="0">All</option>
+                        </select>
                     </div>
                     <div class="input-header">
                         <label for="">Genre</label>
-                        <select name="" id="id-genre"></select>
-                    </div>
-                    <div class="input-header">
-                        <label for="">Kategori</label>
-                        <select name="" id="id-kategori"></select>
+                        <select name="" id="cari-id-genre" onchange="getBuku()">
+                            <option value="0">All</option>
+                        </select>
                     </div>
                 </div>
                 <div class="container-card"></div>

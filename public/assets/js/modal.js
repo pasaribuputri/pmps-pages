@@ -106,3 +106,13 @@ const openModalEditAdmin = () => {
     maskModal.classList.toggle('active');
 }
 
+const modalTambahPenjualan = document.querySelector('.modal-wrapper.tambah-penjualan');
+const closeModalTambahPenjualan = () => {
+    modalTambahPenjualan.classList.toggle('active');
+    maskModal.classList.toggle('active');
+}
+
+const openModalTambahPenjualan = () => {
+    modalTambahPenjualan.classList.toggle('active');
+    maskModal.classList.toggle('active');
+}

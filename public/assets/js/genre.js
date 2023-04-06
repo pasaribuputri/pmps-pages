@@ -70,7 +70,7 @@ async function showCariGenre(cari){
         if(res.status == "ok"){
             createTable(res.data)
         }else{
-            createTable()
+            createTable("Data Kosong")
         }
     })
 }

@@ -35,27 +35,6 @@
                 </form>
             </div>
         </div>
-        <script src="./assets/js/login.js"></script>
-        <script>
-            document.login.onsubmit = (e) => {
-                    e.preventDefault()
-                    fetch('/api/auth/login', {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            code: document.login.code.value,
-                        }),
-                        method: 'POST'
-                    }).then((res) => res.json()).then((response) => {
-                        if (response.status == 'ok') {
-                            localStorage.setItem('userLogin', response.data.userLogin)
-                            location.href = '/pmps-pages/dashboard'
-                        } else {
-                            console.error(response.message);
-                        }
-                    })
-                }
-        </script>
+        <script src="../assets/js/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../assets/css/dashboard.css" />
+    <link rel="stylesheet" href="../../../assets/css/global.css" />
+    <link rel="stylesheet" href="../../../assets/css/modall.css" />
+    <link rel="stylesheet" href="../../../assets/css/detail-book.css">
+    <title>Detail Buku | PMP's Pages</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <sidebar class="sidebar">
+            <button class="toggleSidebar">
+                <i class="fa-solid fa-chevron-left fa-sm"></i>
+            </button>
+            <div class="header-sidebar">
+                <div class="logo">
+                    <img src="../../../assets/images/open-book.png" alt="logo-pmps" style="width: 25px" />
+                    <label>PMP's Pages</label>
+                </div>
+            </div>
+            <div class="body-sidebar">
+                <nav class="navbar">
+                    <ul class="nav">
+                        <li class="nav-item active dashboard">
+                            <span>
+                                <i class="fas fa-book fa-lg"></i>
+                            </span>
+                            <label> Buku </label>
+                        </li>
+                        <li class="nav-item">
+                            <div class="chevron-down" style="position: absolute; right: -10px">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <span>
+                                <i class="fas fa-book-open fa-lg"></i>
+                            </span>
+                            <label> Data Buku </label>
+                        </li>
+                        <div class="child data-buku">
+                            <ul class="nav-user">
+                                <li class="nav-item-user kategori">
+                                    <span>
+                                        <i class="fa-solid fa-caret-right fa-lg"></i>
+                                    </span>
+                                    <label style="white-space: nowrap">Kategori</label>
+                                </li>
+                                <li class="nav-item-user genre">
+                                    <span>
+                                        <i class="fa-solid fa-caret-right fa-lg"></i>
+                                    </span>
+                                    <label style="white-space: nowrap">Genre</label>
+                                </li>
+                                <li class="nav-item-user penerbit">
+                                    <span>
+                                        <i class="fa-solid fa-caret-right fa-lg"></i>
+                                    </span>
+                                    <label style="white-space: nowrap">Penerbit</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <li class="nav-item penjualan">
+                            <span>
+                                <i class="fas fa-chart-line fa-lg"></i>
+                            </span>
+                            <label> Data Penjualan </label>
+                        </li>
+                        <li class="nav-item data-admin">
+                            <span>
+                                <i class="fas fa-users fa-lg"></i>
+                            </span>
+                            <label> Data Admin </label>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-sidebar">
+                <div class="info-user" style="display: flex; align-items: center">
+                    <div class="chevron-down">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="profil-user">
+                        <div class="icon">
+                            <i class="fas fa-user-cog fa-lg"></i>
+                        </div>
+                        <label> Setting </label>
+                    </div>
+                </div>
+                <div class="collapse-info-user">
+                    <ul class="nav-user">
+                        <li class="nav-item-user log-out">
+                            <span>
+                                <i class="fa-solid fa-door-open fa-lg"></i>
+                            </span>
+                            <label style="white-space: nowrap"> Log out </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </sidebar>
+        <main class="main">
+            <div class="header">
+                <div class="box-judul">
+                    <label class="title">Buku</label>
+                    <label>Detail Buku</label>
+                </div>
+                <div class="wrapper-profil">
+                    <div class="container-currentdate">
+                        <i class="fa-regular fa-calendar-days fa-lg"></i>
+                        <label class="current-date"></label>
+                    </div>
+                    <label class="user-name"></label>
+                </div>
+            </div>
+            <div class="container-content">
+                <div class="container-detail-book">
+                    <div class="detail-image-book">
+                        <img id="gambar-detail-buku" src="" alt="" />
+                    </div>
+                    <div class="detail-book">
+                        <div class="detail-judul-book">
+                            <h1 id="judul-buku">Judul Buku</h1>
+                            <p id="penulis-buku">Ini Penulis</p>
+                            <h3 id="harga-buku">Rp 49.000</h3>
+                        </div>
+                        <div class="detail-deskripsi-book">
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Deskripsi</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p id="deskripsi-buku">
+                                        Merupakan sebuah buku cerita dan dongeng rakyat yang
+                                        ceritanya sangat terkenal dikalangan rakyat Indonesia.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Penerbit</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p id="penerbit-buku">Gramedia</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Genre</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p id="genre-buku">Dongeng</p>
+                                </div>
+                            </div>
+                            <div class="wrapper-detail">
+                                <div class="key-book">
+                                    <p>Kategori</p>
+                                </div>
+                                <div class="value-book">
+                                    <p>:&nbsp;&nbsp;&nbsp;</p>
+                                    <p id="kategori-buku">Fiksi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button id="btn-edit">Edit</button>
+                    <button id="btn-hapus">Hapus</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="modal-wrapper">
+        <div class="modal-header">
+            <button class="btn-close-modal" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Edit Buku</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-form">
+                <form name="formEditBuku">
+                    <div class="input-form-tambah">
+                        <label>Harga</label>
+                        <input type="text" id="harga" name="harga-buku" required />
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Penerbit</label>
+                        <select name="" id="tambah-id-penerbit"></select>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Judul Buku</label>
+                        <input type="text" id="edit-judul-buku" required />
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Penulis</label>
+                        <input type="text" id="penulis" required />
+                    </div>
+                    <div class="input-form-tambah">
+                        <label for="id-kategori">Gambar</label>
+                        <input type="file" name="" id="edit-gambar" />
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Genre</label>
+                        <select name="" id="tambah-id-genre"></select>
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Stok</label>
+                        <input type="text" id="stok" required />
+                    </div>
+                    <div class="input-form-tambah">
+                        <label>Deskripsi</label>
+                        <textarea id="edit-deskripsi"></textarea>
+                    </div>
+                    <div class="input-button">
+                        <button type="reset">Reset</button>
+                        <button class="btn simpan">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrapper tambah-penjualan">
+        <div class="modal-header">
+            <button class="btn-close-modal" onclick="closeModalTambahPenjualan()">x</button>
+            <h3>Tambah Penjualan</h3>
+        </div>
+        <div class="modal-body">
+            <div class="modal-form">
+                <form>
+                    <div class="input-form-tambah">
+                        <label>Nama Penerbit</label>
+                        <input type="text" id="nama-penerbit" required>
+                    </div>
+                    <div class="input-button">
+                        <button type="reset">Reset</button>
+                        <button class="btn simpan">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mask-modal"></div>
+    <script src="https://kit.fontawesome.com/8b219fb2a5.js" crossorigin="anonymous"></script>
+    <script src="../../../assets/js/all-page.js"></script>
+    <script src="../../../assets/js/modal.js"></script>
+    <script src="../../../assets/js/edit-buku.js"></script>
+</body>
+
+</html>

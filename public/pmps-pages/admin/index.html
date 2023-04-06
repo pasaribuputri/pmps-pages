@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,9 @@
     <link rel="stylesheet" href="../../assets/css/modall.css">
     <title>Admin | PMP's Pages</title>
 </head>
+
 <body>
+
     <body>
         <div class="wrapper">
             <sidebar class="sidebar">
@@ -31,16 +34,16 @@
                                     <i class="fas fa-book fa-lg"></i>
                                 </span>
                                 <label> Buku </label>
-                                </li>
-                                <li class="nav-item">
-                                    <div class="chevron-down" style="position: absolute; right: -10px;">
-                                        <i class="fa-solid fa-chevron-down"></i>
-                                    </div>
-                                    <span>
-                                        <i class="fas fa-book-open fa-lg"></i>
-                                    </span>
-                                    <label> Data Buku </label>
-                                </li>
+                            </li>
+                            <li class="nav-item">
+                                <div class="chevron-down" style="position: absolute; right: -10px;">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <span>
+                                    <i class="fas fa-book-open fa-lg"></i>
+                                </span>
+                                <label> Data Buku </label>
+                            </li>
                             <div class="child data-buku">
                                 <ul class="nav-user">
                                     <li class="nav-item-user kategori">
@@ -113,33 +116,28 @@
                             <i class="fa-regular fa-calendar-days fa-lg"></i>
                             <label class="current-date"></label>
                         </div>
-                        <label>Putri Mulyani</label>
+                        <label class="user-name"></label>
                     </div>
                 </div>
                 <div class="container-content">
                     <!-- ISI CONTENT  -->
-                        <div class="box-input-pencarian">
-                            <div class="input-header">
-                                <button class="btn-tambah" onclick="openModalTambah()">Tambah Admin</button>
-                            </div>
-                            <form action="">
-                                <input type="text" class="input-pencarian" placeholder="Pencarian...">
-                                <button class="btn-cari">
-                                    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                                </button>
-                            </form>
+                    <div class="box-input-pencarian">
+                        <div class="input-header">
+                            <button class="btn-tambah" style="width: fit-content;" onclick="openModalTambah()">Tambah
+                                Admin</button>
                         </div>
-                        <table class="content-table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama</th>
-                                    <th>Email</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                    </div>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                     <!-- END CONTENT  -->
                 </div>
             </main>
@@ -206,4 +204,5 @@
         <script src="../../assets/js/tambah-admin.js"></script>
     </body>
 </body>
+
 </html>
