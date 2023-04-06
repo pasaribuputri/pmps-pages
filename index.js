@@ -20,7 +20,7 @@ app.use(express.json())
 // MIDDLEWARE
 app.use(cookieParser())
 app.use((req, res, next) => {
-    if(req.path.startsWith('/api/auth') || req.path.startsWith('/assets') || req.path.startsWith('/photos')){
+    if(req.path === '/api/auth' || req.path.startsWith('/assets') || req.path.startsWith('/photos')){
         next()
     } else {
         let authorized = false;
@@ -71,7 +71,5 @@ app.use("/api/kategori",kategoriRouter)
 app.use("/api/penerbit",penerbitRouter)
 app.use("/api/penjualan",penjualamRouter)
 
-
-app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 app.listen(port, () => console.log(`Berjalan pada port ${port}`));
