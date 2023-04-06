@@ -72,6 +72,6 @@ app.use("/api/penerbit",penerbitRouter)
 app.use("/api/penjualan",penjualamRouter)
 
 
-app.get('/favicon.ico', (req, res) => res.status(204));
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 app.listen(port, () => console.log(`Berjalan pada port ${port}`));
