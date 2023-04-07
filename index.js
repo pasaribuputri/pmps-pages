@@ -20,7 +20,7 @@ app.use(express.json())
 // MIDDLEWARE
 app.use(cookieParser())
 app.use((req, res, next) => {
-    if(req.path === '/api/auth' || req.path.startsWith('/assets') || req.path.startsWith('/photos')){
+    if(req.path.startsWith('/api/auth') || req.path.startsWith('/assets') || req.path.startsWith('/photos')){
         next()
     } else {
         let authorized = false;
