@@ -62,7 +62,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "public")));
 
 
-
+// middleware untuk mengakses file lain
 app.use('/api/auth', auth);
 app.use("/api/buku",bukuRouter);
 app.use("/api/admin",adminRouter);
